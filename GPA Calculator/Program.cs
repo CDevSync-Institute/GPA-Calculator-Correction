@@ -51,7 +51,7 @@ class program
             grades.Add(grade);
             gPA.grades.Add(grade);
         }
-        gPA.finalGPA = GPASaga.CalculateFinalGPA(gPA.totalGradeReceived, gPA.totalGradePoint);
+        gPA.finalGPA = GPASaga.CalculateFinalGPAOnly(gPA.totalGradeReceived, gPA.totalGradePoint);
         Console.WriteLine("Course Code || Course Name || Course Unit ||Course Descr || Score Received || Grade Received || Grade Point Received ");
         foreach (Course course in courses)
         {
