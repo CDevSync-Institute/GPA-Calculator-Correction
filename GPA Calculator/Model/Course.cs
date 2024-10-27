@@ -8,7 +8,7 @@ namespace GPA_Calculator.Model
 {
     public class Course
     {
-        public string courseCode { get; set; }
+        public string courseCode { get; set; } 
         public string courseName { get; set; }
         public int courseUnit {  get; set; }
         public string? courseDescription {  get; set; }
