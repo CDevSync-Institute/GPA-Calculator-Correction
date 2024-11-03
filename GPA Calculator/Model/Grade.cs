@@ -14,5 +14,6 @@ namespace GPA_Calculator.Model
         public char gradeCharacter { get; set; } = 'E';
         public int scoreReceived { get; set; } = 0;
         public int gradePoint { get; set; }
+        public int GPAPerCourse { get; set; }
     }
 }

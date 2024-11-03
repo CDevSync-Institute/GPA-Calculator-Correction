@@ -62,6 +62,10 @@ namespace GPA_Calculator.Methods
         {
 
             return lastCumulativeGradeReceived + newGradeReceived;
+        } public static int GPAPerCourse(int gradePoint, int courseUnit)
+        {
+
+            return gradePoint * courseUnit;
         }
     }
 

@@ -13,6 +13,7 @@ namespace GPA_Calculator.Model
         public int totalGradeReceived {  get; set; }
         public int totalGradePoint {  get; set; }
         public int totalCourse {  get; set; }
+        public int totalGPA {  get; set; }
         public List<Grade> grades { get; set; }=new List<Grade>();
         public List<Course> courses { get; set; } = new List<Course>();
 

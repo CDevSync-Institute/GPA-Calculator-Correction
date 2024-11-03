@@ -37,6 +37,7 @@ class program
         Console.WriteLine("Please You will be supply Grade details now");
         List<Grade> grades = new List<Grade>();
         int counter= 1;
+
         foreach (Course course in courses)
         {
             Grade grade = new Grade();
@@ -46,7 +47,8 @@ class program
             grade.courseCode = course.courseCode;
             grade.gradeCharacter = gradeSaga.GetGradeCharacter(grade.scoreReceived);
             grade.gradePoint = gradeSaga.GetGradePoint(grade.gradeCharacter);
-            gPA.totalGradeReceived = GradeSaga.CalculateTotalGradeReceived(gPA.totalGradeReceived, grade.gradePoint);
+            grade.GPAPerCourse = GradeSaga.GPAPerCourse(grade.gradePoint, course.courseUnit);
+            gPA.totalGradeReceived = GradeSaga.CalculateTotalGradeReceived(gPA.totalGradeReceived, grade.GPAPerCourse);
             counter++;
             grades.Add(grade);
             gPA.grades.Add(grade);
@@ -58,6 +60,6 @@ class program
             Grade grade = grades.FirstOrDefault(u => u.courseCode == course.courseCode);
             Console.WriteLine($"{course.courseCode} || {course.courseName} || {course.courseUnit} ||{course.courseDescription}|| {grade.scoreReceived} || {grade.gradeCharacter} || {grade.gradePoint} ");
         }
-        Console.WriteLine($"Final GPA={gPA.totalGradePoint}/{gPA.totalGradeReceived} for {gPA.totalCourse} courses ={gPA.finalGPA}");
+        Console.WriteLine($"Final GPA={gPA.totalGradeReceived}/{gPA.totalGradePoint} for {gPA.totalCourse} courses ={gPA.finalGPA}");
     }
 }
